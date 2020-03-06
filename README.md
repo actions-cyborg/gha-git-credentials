@@ -51,7 +51,7 @@ jobs:
   publish:
     - uses: actions/checkout@v2
     # Publish to a branch in current repo using GITHUB_TOKEN and other default settings.
-    - uses: oleksiyrudenko/gha-git-credentials@v1
+    - uses: oleksiyrudenko/gha-git-credentials@v2
       with:
         token: '${{ secrets.GITHUB_TOKEN }}'
     - run: |
@@ -62,7 +62,7 @@ jobs:
     # Option `actor` is set to a username on that different repo cloud.
     # Option `global` is set to true as deployment script may create a temporary local repo
     # for a build.
-    - uses: oleksiyrudenko/gha-git-credentials@v1
+    - uses: oleksiyrudenko/gha-git-credentials@v2
       with:
         name: 'Oleksiy Rudenko'
         email: 'oleksiy.rudenko@domain.com'
