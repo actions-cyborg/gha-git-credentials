@@ -30,7 +30,7 @@ Actor would also be overridden when pushing to a repo cloud other than GitHub.
 | ---           | ---        | ---           | ---         |
 | `name`        | string     | `GitHub Action` | value for git config user.name |
 | `email`       | string     | `github-action@users.noreply.github.com` | value for git config user.email |
-| `global`      | boolean    | false         | global git config configured when true |
+| `global`      | boolean    | false         | global git config is configured when set to true |
 | `actor`       | string     | **github.actor** | value used to construct GIT_USER |
 | `token`       | string     |               | **required** value for git config user.password and GIT_USER |
 
