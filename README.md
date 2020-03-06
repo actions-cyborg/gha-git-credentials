@@ -68,6 +68,9 @@ jobs:
         yarn run deploy web-central/master
 ```
 
+You may want to set `global` option true when publishing from multiple
+local repositories.
+
 ## License
 
 Scripts and documentation in this project are released under the [MIT license](LICENSE).
