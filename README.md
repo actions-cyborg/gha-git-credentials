@@ -5,7 +5,8 @@ git credentials.
 
 This project deployment workflow uses this action.
 
-This can be useful when workflow provides for creating commits
+[This action](https://github.com/marketplace/actions/configure-git-credentials)
+can be useful when workflow provides for creating commits
 (e.g. when publishing content) and/or pushing commits to remote repos.
 
 Default values would work for the most cases.
