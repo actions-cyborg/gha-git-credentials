@@ -50,22 +50,27 @@ on:
 jobs:
   publish:
     - uses: actions/checkout@v2
-    # publish to a branch in current repo using GITHUB_TOKEN and other default settings
+    # Publish to a branch in current repo using GITHUB_TOKEN and other default settings.
     - uses: oleksiyrudenko/gha-git-credentials@v1
       with:
         token: '${{ secrets.GITHUB_TOKEN }}'
     - run: |
         yarn run build
         yarn run deploy
-    # publish to a branch in different repo using a PAT generated on that other repo
+    # Publish to a branch in different repo on a different repo cloud
+    # using a PAT generated on that other repo.
+    # Option `actor` is set to a username on that different repo cloud.
+    # Option `global` is set to true as deployment script may create a temporary local repo
+    # for a build.
     - uses: oleksiyrudenko/gha-git-credentials@v1
       with:
         name: 'Oleksiy Rudenko'
         email: 'oleksiy.rudenko@domain.com'
         actor: 'OleksiyRudenko'
-        token: '${{ secrets.GH_PAT_WEB_CENTRAL }}'
+        global: true
+        token: '${{ secrets.GL_PAT_WEB_CENTRAL }}'
     - run: |
-        git remote add web-central https://github.com/some-organization/website.git
+        git remote add web-central https://gitlab.com/some-organization/website.git
         yarn run deploy web-central/master
 ```
 
